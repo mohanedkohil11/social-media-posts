@@ -1,0 +1,76 @@
+@import "./varibles.scss";
+
+html {
+  font-family: $mainFontFamily;
+  // this define what 1rem is ,, we want >>> 1 rem = 10px; 10px/16px=62.5% <<<
+  font-size: 70%;
+
+  @media (max-width: 1366px) {
+    font-size: 65%;
+  }
+
+  @media (max-width: 900px) {
+    font-size: 62.5%; //1rem = 10px
+  }
+
+  @media (max-width: 540px) {
+    font-size: 62.5%;
+  }
+}
+
+body {
+  margin: 0rem;
+}
+
+.container {
+  width: 1280px;
+  margin: 0% auto;
+  overflow: hidden;
+
+  @media (max-width: 1400px) {
+    width: 90%;
+    margin: 0px 2%;
+  }
+}
+
+// global styling
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button {
+  font-family: $headingFontFamily;
+}
+
+p,
+input,
+textarea {
+  font-family: $mainFontFamily;
+  color: $body-dark;
+}
+
+input,
+textarea,
+button {
+  &:focus {
+    outline: none;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+app {
+  display: flex;
+  flex-direction: column;
+  // justify-content: space-between;
+  min-height: 100vh;
+}
+
+appBody {
+  flex: 1 1 auto;
+}
