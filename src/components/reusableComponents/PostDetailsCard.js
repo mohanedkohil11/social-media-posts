@@ -19,8 +19,8 @@ export default function PostDetailsCard(props) {
             </div>
 
             <div className='buttonSection'>
-                <Link to={`/edit-post/${props.postData?.id}`}><i class="fas fa-edit"></i></Link>
-                <div onClick={deleteHandle}><i class="fas fa-trash-alt"></i></div>
+                <Link to={`/edit-post/${props.postData?.id}`}><i className="fas fa-edit"></i></Link>
+                <div onClick={deleteHandle}><i className="fas fa-trash-alt"></i></div>
             </div>
 
         </div >

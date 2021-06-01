@@ -51,8 +51,8 @@ export default function EditPostCard(props) {
 
 
             <div className='buttonSection'>
-                <div onClick={saveHandle}><i class="fas fa-save" /></div>
-                <div onClick={cancelHandle}><i class="fas fa-times" /></div>
+                <div onClick={saveHandle}><i className="fas fa-save" /></div>
+                <div onClick={cancelHandle}><i className="fas fa-times" /></div>
             </div>
 
 

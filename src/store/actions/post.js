@@ -59,7 +59,6 @@ export const GET_POST_BY_ID = async (postId, dispatch) => {
 };
 
 export const UPDATE_POST = async (postData) => {
-    console.log('run');
     await Requester.patch(`/posts/${postData.id}`, postData)
         .then((response) => {
             window.alert('Post Updated successfully')
