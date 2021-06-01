@@ -14,12 +14,26 @@ import history from "./utils/History";
 
 import './styles/main.scss'
 
+
 function App() {
+
+  useEffect(() => {
+    var direction = localStorage.getItem("direction");
+    setDirection(direction || 'ltr')
+  }, []);
+
+  const [direction, setDirection] = useState('ltr');
 
   const [store, dispatch] = useReducer(
     PostReducer.PostReducer,
     PostReducer.initialState
   );
+
+  const handleDirection = () => {
+    let newDirection = direction == 'ltr' ? 'rtl' : 'ltr'
+    localStorage.setItem("direction", newDirection);
+    setDirection(newDirection)
+  }
 
   return (
     <Context.Provider
@@ -31,10 +45,8 @@ function App() {
       {store.spinnerHandle && <FullPageSpinner />}
       <Router history={history}>
 
-      <Router history={createBrowserHistory}>
-
-        <div className='app'>
-          <Header />
+        <div className='app' dir={direction}>
+          <Header directionHandle={handleDirection} />
           <div className='appBody'>
             <Switch>
               <Route
