@@ -3,6 +3,7 @@ import Types from '../types'
 export const initialState = {
     posts: [],
     selectedPost: {},
+    spinnerHandle: false
 };
 
 export const PostReducer = (state = initialState, action) => {
@@ -26,6 +27,11 @@ export const PostReducer = (state = initialState, action) => {
             return {
                 ...state,
                 selectedPost: {}
+            };
+        case Types.SPINNER_CONTROLLER:
+            return {
+                ...state,
+                spinnerHandle: action.payLoad
             };
         default:
             return state;

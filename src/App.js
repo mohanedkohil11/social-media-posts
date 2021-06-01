@@ -5,6 +5,7 @@ import Footer from './components/layout/Footer';
 import Header from './components/layout/Header';
 import Home from './pages/home/Home';
 import PostDetails from './pages/postDetails/PostDetails';
+import FullPageSpinner from './components/reusableComponents/fullPageSpinner';
 import EditPost from './pages/editPost/EditPost';
 
 import * as PostReducer from "./store/reducers/postsReducer";
@@ -27,6 +28,8 @@ function App() {
         dispatch: dispatch
       }}
     >
+      {store.spinnerHandle && <FullPageSpinner />}
+      <Router history={history}>
 
       <Router history={createBrowserHistory}>
 

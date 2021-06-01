@@ -6,6 +6,9 @@ const Types = {
 
     //clean-up actions
     CLEAN_UP_ALL_POSTS: 'CLEAN_UP_ALL_POSTS',
-    CLEAN_UP_SELECTED_POST: 'CLEAN_UP_SELECTED_POST'
+    CLEAN_UP_SELECTED_POST: 'CLEAN_UP_SELECTED_POST',
+
+    //spinner controller 
+    SPINNER_CONTROLLER: 'SPINNER_CONTROLLER'
 }
 export default Types
