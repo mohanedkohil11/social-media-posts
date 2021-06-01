@@ -1,14 +1,15 @@
-import React, { useReducer } from 'react';
+import React, { useEffect, useReducer, useState } from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
 
 import Footer from './components/layout/Footer';
 import Header from './components/layout/Header';
 import Home from './pages/home/Home';
-import PostDetails from './pages/postDetails.js/PostDetails';
+import PostDetails from './pages/postDetails/PostDetails';
+import EditPost from './pages/editPost/EditPost';
 
 import * as PostReducer from "./store/reducers/postsReducer";
 import Context from "./utils/context";
-import createBrowserHistory from "./utils/History";
+import history from "./utils/History";
 
 import './styles/main.scss'
 
@@ -42,6 +43,11 @@ function App() {
                 path="/post/:id"
                 exact
                 render={() => <PostDetails />}
+              />
+              <Route
+                path="/edit-post/:id"
+                exact
+                render={() => <EditPost />}
               />
             </Switch>
           </div>
