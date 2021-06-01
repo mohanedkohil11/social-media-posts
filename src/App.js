@@ -32,7 +32,7 @@ function App() {
 
   const handleDirection = () => {
     // function responsible for changing direction of the app and saving new direction in local storage
-    let newDirection = direction == 'ltr' ? 'rtl' : 'ltr'
+    let newDirection = direction === 'ltr' ? 'rtl' : 'ltr'
     localStorage.setItem("direction", newDirection);
     setDirection(newDirection)
   }
