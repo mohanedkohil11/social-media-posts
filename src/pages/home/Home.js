@@ -20,17 +20,20 @@ export default function Home() {
 
     const searchHandle = (e) => {
 
-        if (timeout) clearTimeout(timeout);
+        if (timeout) clearTimeout(timeout); // reset timer 
 
         timeout = setTimeout(function () {
+
             if (e.target.value) {
                 search(e.target.value, context.store?.posts).then((results) => {
                     setPosts(results || [])
                 })
             }
             else {
+                //in case search input is null 
                 setPosts(context.store?.posts)
             }
+
         }, 500);
 
 

@@ -18,11 +18,12 @@ import './styles/main.scss'
 function App() {
 
   useEffect(() => {
+    //getting direction from local storage and keeping it in state
     var direction = localStorage.getItem("direction");
     setDirection(direction || 'ltr')
   }, []);
 
-  const [direction, setDirection] = useState('ltr');
+  const [direction, setDirection] = useState('ltr'); // App direction state
 
   const [store, dispatch] = useReducer(
     PostReducer.PostReducer,
@@ -30,6 +31,7 @@ function App() {
   );
 
   const handleDirection = () => {
+    // function responsible for changing direction of the app and saving new direction in local storage
     let newDirection = direction == 'ltr' ? 'rtl' : 'ltr'
     localStorage.setItem("direction", newDirection);
     setDirection(newDirection)
@@ -42,31 +44,43 @@ function App() {
         dispatch: dispatch
       }}
     >
+
       {store.spinnerHandle && <FullPageSpinner />}
+
       <Router history={history}>
 
         <div className='app' dir={direction}>
+
           <Header directionHandle={handleDirection} />
+
           <div className='appBody'>
+
             <Switch>
+
               <Route
                 path="/"
                 exact
                 render={() => <Home />}
               />
+
               <Route
                 path="/post/:id"
                 exact
                 render={() => <PostDetails />}
               />
+
               <Route
                 path="/edit-post/:id"
                 exact
                 render={() => <EditPost />}
               />
+
             </Switch>
+
           </div>
+
           <Footer />
+
         </div>
 
       </Router>

@@ -5,11 +5,13 @@ export default function EditPostCard(props) {
     const [updatedPost, setUpdatedPost] = useState(null)
     const saveHandle = () => {
         if (updatedPost)
+            // case : there is new updates
             UPDATE_POST({
                 id: props.postData?.id,
                 ...updatedPost
             })
         else
+            // case : there is (NO) new updates
             cancelHandle()
     }
 
