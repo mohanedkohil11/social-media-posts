@@ -1,6 +1,9 @@
 import React, { useContext, useState } from 'react';
 import { UPDATE_POST } from '../../store/actions/post';
-import history from '../../utils/History'
+import history from '../../utils/History';
+import { ReactComponent as SaveSVG } from '../../assets/save.svg';
+import { ReactComponent as CloseSVG } from '../../assets/close.svg';
+
 export default function EditPostCard(props) {
     const [updatedPost, setUpdatedPost] = useState(null)
     const saveHandle = () => {
@@ -51,8 +54,8 @@ export default function EditPostCard(props) {
 
 
             <div className='buttonSection'>
-                <div onClick={saveHandle}><i className="fas fa-save" /></div>
-                <div onClick={cancelHandle}><i className="fas fa-times" /></div>
+                <div onClick={saveHandle}><SaveSVG /></div>
+                <div onClick={cancelHandle}><CloseSVG /></div>
             </div>
 
 

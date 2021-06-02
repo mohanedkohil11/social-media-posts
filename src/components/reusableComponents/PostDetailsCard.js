@@ -1,6 +1,8 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { DELETE_POST } from '../../store/actions/post';
+import { ReactComponent as EditSVG } from '../../assets/edit.svg';
+import { ReactComponent as DeleteSVG } from '../../assets/delete.svg';
 
 export default function PostDetailsCard(props) {
 
@@ -19,8 +21,8 @@ export default function PostDetailsCard(props) {
             </div>
 
             <div className='buttonSection'>
-                <Link to={`/edit-post/${props.postData?.id}`}><i className="fas fa-edit"></i></Link>
-                <div onClick={deleteHandle}><i className="fas fa-trash-alt"></i></div>
+                <Link to={`/edit-post/${props.postData?.id}`}><EditSVG /></Link>
+                <div onClick={deleteHandle}><DeleteSVG /></div>
             </div>
 
         </div >
